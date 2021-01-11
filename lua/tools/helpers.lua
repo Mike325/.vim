@@ -742,4 +742,25 @@ function M.python(version, args)
     nvim.command(split..' split term://'..pyversion..' '..args)
 end
 
+function M.load_settings(name)
+
+    local hack = nvim.g.plugs
+    if hack[name] == nil then
+        hack[name] = 1
+    end
+
+    name = name:gsub('+', '')
+    name = name:gsub('[-/%.]', '_'):lower()
+
+    -- TODO: Add glob function to call just the available configs
+    if is_file('autoload/plugins/'..name..'.vim') then
+        nvim.g.plugs = hack
+        local ok, error_code = pcall(nvim.command, 'runtime! autoload/plugins/'..name..'.vim')
+        if not ok and not error_code:match('Vim:E117') then
+            echoerr("Something failed '"..error_code.."' Happened trying to source "..name..".vim")
+        end
+    end
+
+end
+
 return M

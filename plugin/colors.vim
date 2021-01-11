@@ -1,6 +1,10 @@
 " Colorscheme settings
 " github.com/mike325/.vim
 
+if has('nvim-0.5')
+    finish
+endif
+
 set background=dark
 set cursorline
 

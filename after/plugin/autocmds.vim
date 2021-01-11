@@ -14,8 +14,6 @@ if has('nvim')
     finish
 endif
 
-let g:autocmds_loaded = 1
-
 " We don't need Vim's temp files here
 augroup DisableTemps
     autocmd!

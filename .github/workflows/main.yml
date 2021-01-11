@@ -34,6 +34,9 @@ jobs:
         run: |
           curl -OL https://raw.githubusercontent.com/Mike325/dotfiles/master/install.sh
           chmod +x ./install.sh
+          PACKER="~/.local/share/nvim/site/pack/packer/opt/"
+          mkdir -p "$PACKER"
+          git clone --recursive 'https://github.com/wbthomason/packer.nvim' "$PACKER/packer.nvim"
       - name: Install dotfiles and dependencies
         run: |
           ./install.sh --verbose --vim --nvim --python=3 --portables
@@ -78,6 +81,9 @@ jobs:
         run: |
           curl -OL https://raw.githubusercontent.com/Mike325/dotfiles/master/install.sh
           chmod +x ./install.sh
+          PACKER="~/.local/share/nvim/site/pack/packer/opt/"
+          mkdir -p "$PACKER"
+          git clone --recursive 'https://github.com/wbthomason/packer.nvim' "$PACKER/packer.nvim"
       - name: Install dotfiles and dependencies
         run: |
           ./install.sh --verbose --vim --neovim=dotfiles --python=3
@@ -124,6 +130,9 @@ jobs:
         run: |
           curl -OL https://raw.githubusercontent.com/Mike325/dotfiles/master/install.sh
           chmod +x ./install.sh
+          PACKER="~/AppData/Local/nvim-data"
+          mkdir -p "$PACKER"
+          git clone --recursive 'https://github.com/wbthomason/packer.nvim' "$PACKER/packer.nvim"
       - name: Install dotfiles and dependencies
         shell: bash
         run: |

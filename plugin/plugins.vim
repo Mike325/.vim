@@ -1,7 +1,7 @@
 " plugins.vim Setttings
 " github.com/mike325/.vim
 
-if exists('g:loaded_mike_plugins') || has#minimal() || has#bare() || !has#plugin_manager()
+if exists('g:loaded_mike_plugins') || has('nvim-0.5') || has#minimal() || has#bare() || !has#plugin_manager()
     finish
 endif
 
