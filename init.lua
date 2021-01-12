@@ -25,7 +25,8 @@ vim.g.loaded_tarPlugin         = 1
 vim.g.loaded_vimballPlugin     = 1
 
 if sys.name == 'windows' then
-    vim.o.shellslash = true
+    -- vim.o.shellslash = true
+    vim.o.shell = 'cmd.exe'
 end
 
 vim.g.plugs = {
